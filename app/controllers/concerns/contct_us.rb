@@ -2,6 +2,7 @@ module ContctUs
 
   def self.load_data
     loop do
+      # http://en.wikipedia.org/wiki/Rickrolling
       puts "Oooh
 
       We're no strangers to love
