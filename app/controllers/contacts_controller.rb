@@ -27,6 +27,12 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    @contact.destroy
+  redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+  end
+
+
+  def update
     if @contact.update(contact_params)
       redirect_to @contact, notice: 'Contact was successfully updated.'
     else
@@ -34,10 +40,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  def update
-    @contact.destroy
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
-  end
+
 
   def new
     @contact = Contact.new
